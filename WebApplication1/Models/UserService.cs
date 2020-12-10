@@ -22,7 +22,13 @@ namespace WebApplication1 // как зарегать generic, зарегать �
 
             ValidatePassword(userView.Password);
 
-            var user = new User() { Id = userView.Id, Username = userView.Username, Password = userView.Password, FirstName = userView.FirstName, LastName = userView.LastName, Email = userView.Email, BirthDay = userView.BirthDay, Tags = userView.Tags };
+            var user = new User() { Id = userView.Id, 
+                Username = userView.Username, 
+                Password = userView.Password, 
+                FirstName = userView.FirstName, 
+                LastName = userView.LastName, 
+                Email = userView.Email, 
+                BirthDay = userView.BirthDay,};
 
             _baseRepository.Create(user);
         }
