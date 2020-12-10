@@ -62,9 +62,9 @@ namespace WebApplication1 // как зарегать generic, зарегать �
 
             if (password.Length < 6) throw new Exception("Length of password < 6");
 
-            if (password.Any(char.IsUpper) &&
+            if (!(password.Any(char.IsUpper) &&
                 password.Any(char.IsLower) &&
-                password.Any(char.IsNumber))
+                password.Any(char.IsNumber)))
                 throw new Exception("Password должен иметь хотя бы один символ верхнего и маленького регистра и цифру");
         }
     }

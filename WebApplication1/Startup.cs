@@ -26,6 +26,14 @@ namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository,
         {
             services.AddControllers();
 
+            var config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+
+            var appconfig = config.Get<AppConfig>();
+
+            services.AddSingleton(appconfig);
+
+            services.AddTransient(typeof(BaseRepository<>));
+
             services.AddSingleton<UserService>();
         }
 
@@ -49,4 +57,18 @@ namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository,
             });
         }
     }
+
+    public class AppConfig
+    {
+        public MongoConnectionConfig MongoConnection { get; set; }
+    }
+
+    public class MongoConnectionConfig
+    {
+        public string ConnectionString { get; set; }
+
+        public string DatabaseName { get; set; }
+    }
 }
+//у меня должен быть database provider(класс), у него метод, который возвращает getcollection(generic)(должен принимать connection string) и я должен resolveить databaseprovider в DBrepository И возвращать в коллекцию
+//

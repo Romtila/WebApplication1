@@ -10,13 +10,13 @@ namespace WebApplication1 // как зарегать generic, зарегать �
     {
         private IMongoCollection<T> collection;
 
-        public BaseRepository()
+        public BaseRepository(AppConfig appConfig)
         {
-            var db = new MongoClient("mongodb://localhost:27017");
+            var db = new MongoClient(appConfig.MongoConnection.ConnectionString);
 
-            var edb = db.GetDatabase("WebAppDB");
+            var edb = db.GetDatabase(appConfig.MongoConnection.DatabaseName);
 
-            collection = edb.GetCollection<T>(nameof(T));
+            collection = edb.GetCollection<T>(typeof(T).Name);
         }
 
         public void Create(T user)
