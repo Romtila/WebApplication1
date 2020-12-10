@@ -18,7 +18,7 @@ namespace WebApplication1.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger/*, UserService userService*/)
         {
             _logger = logger;
         }
@@ -37,3 +37,4 @@ namespace WebApplication1.Controllers
         }
     }
 }
+//создать метод createUser, который принимает UserView
