@@ -18,9 +18,13 @@ namespace WebApplication1.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger/*, UserService userService*/)
+        private readonly ILogger<UserService> _userService;
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, ILogger<UserService> userService)
         {
             _logger = logger;
+
+            _userService = userService;
         }
 
         [HttpGet]

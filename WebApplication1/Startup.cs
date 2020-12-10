@@ -26,7 +26,7 @@ namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository,
         {
             services.AddControllers();
 
-            //services.AddSingleton<UserService>();
+            services.AddSingleton<UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
