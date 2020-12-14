@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository, 
+namespace WebApplication1  
 {
     public class BaseRepository<T> where T : IHasId
     {

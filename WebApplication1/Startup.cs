@@ -69,6 +69,15 @@ namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository,
 
         public string DatabaseName { get; set; }
     }
+
+    public class DBProvider<T>
+    {
+        public T GetCollection(string str)
+
+        {
+
+        }
+    }
 }
-//у меня должен быть database provider(класс), у него метод, который возвращает getcollection(generic)(должен принимать connection string) и я должен resolveить databaseprovider в DBrepository И возвращать в коллекцию
-//
+//у меня должен быть dbprovider(класс), у него метод, который возвращает getcollection(generic)(должен принимать connection string) 
+//и я должен resolveить dbprovider в DBrepository И возвращать в коллекцию

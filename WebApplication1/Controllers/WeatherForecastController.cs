@@ -34,4 +34,3 @@ namespace WebApplication1.Controllers
         }
     }
 }
-//создать метод createUser, который принимает UserView
