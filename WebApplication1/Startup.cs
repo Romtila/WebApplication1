@@ -69,13 +69,14 @@ namespace WebApplication1 // как зарегать generic, зарегать тот Baserepository,
 
         public string DatabaseName { get; set; }
     }
-
-    public class DBProvider<T>
+        public class DBProvider<T>
     {
-        public T GetCollection(string str)
+        private readonly BaseRepository<T> BaseRepository;
+
+        public List<T> GetCollection(string str)
 
         {
-
+            return BaseRepository.GetMany();
         }
     }
 }
